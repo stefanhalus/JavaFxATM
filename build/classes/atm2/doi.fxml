@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm2.DoiController">
+   <children>
+      <Rectangle fx:id="welcome" arcHeight="5.0" arcWidth="5.0" fill="#fff966" height="360.0" layoutX="90.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" width="335.0" />
+      <Label layoutX="100.0" layoutY="72.0" text="Magyar">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="btn5" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#act5" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn8" layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onAction="#act8" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn6" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#act6" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn7" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#act7" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn1" layoutX="435.0" layoutY="60.0" mnemonicParsing="false" onAction="#act1" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn2" layoutX="435.0" layoutY="140.0" mnemonicParsing="false" onAction="#act2" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn3" layoutX="435.0" layoutY="220.0" mnemonicParsing="false" onAction="#act3" prefHeight="43.0" prefWidth="69.0" />
+      <Button fx:id="btn4" layoutX="435.0" layoutY="300.0" mnemonicParsing="false" onAction="#act4" prefHeight="43.0" prefWidth="69.0" />
+      <Label layoutX="348.0" layoutY="72.0" text="Română">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="152.0" text="English">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="232.0" text="Francais">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="280.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagini/romanian.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="70.0" layoutX="280.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagini/english.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="70.0" layoutX="280.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagini/french.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="165.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagini/hungarian.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="100.0" layoutY="24.0" text="Alegeți limba" textFill="#300101">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

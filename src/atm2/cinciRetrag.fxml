@@ -5,66 +5,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm2.CinciRetragController">
-   <children>
-      <Rectangle fx:id="welcome" arcHeight="5.0" arcWidth="5.0" fill="#fff966" height="360.0" layoutX="90.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" width="335.0" />
-      <Label fx:id="lbl1" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="268.0" layoutY="72.0" minWidth="150.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Label>
-      <Button fx:id="btn5" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#act5" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn8" layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onAction="#act8" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn6" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#act6" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn7" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#act7" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn1" layoutX="435.0" layoutY="60.0" mnemonicParsing="false" onAction="#act1" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn2" layoutX="435.0" layoutY="140.0" mnemonicParsing="false" onAction="#act2" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn3" layoutX="435.0" layoutY="220.0" mnemonicParsing="false" onAction="#act3" prefHeight="43.0" prefWidth="69.0" />
-      <Button fx:id="btn4" layoutX="435.0" layoutY="300.0" mnemonicParsing="false" onAction="#act4" prefHeight="43.0" prefWidth="69.0" />
-      <Label fx:id="lblTitlu" layoutX="105.0" layoutY="24.0" textFill="#300101">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl2" alignment="CENTER_RIGHT" layoutX="268.0" layoutY="142.0" maxWidth="200.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl3" alignment="CENTER_RIGHT" layoutX="268.0" layoutY="232.0" minWidth="150.0" prefWidth="150.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl4" alignment="CENTER_RIGHT" layoutX="268.0" layoutY="312.0" maxWidth="150.0" prefWidth="150.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl8" layoutX="99.0" layoutY="302.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl7" layoutX="99.0" layoutY="232.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl6" layoutX="99.0" layoutY="152.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl5" layoutX="99.0" layoutY="72.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblSold" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="94.0" prefHeight="82.0" prefWidth="119.0" textAlignment="CENTER" textFill="#093703" wrapText="true">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-   </children>
+  <children>
+    <Pane fx:id="ecran" layoutX="82.0" layoutY="15.0" prefHeight="355.0" prefWidth="350.0">
+      <children>
+        <Label fx:id="lblTitlu" layoutX="5.0" layoutY="4.0" prefHeight="28.0" prefWidth="335.0" />
+        <Label fx:id="lbl1" layoutX="170.0" layoutY="40.0" />
+        <Label fx:id="lbl2" layoutX="170.0" layoutY="120.0" />
+        <Label fx:id="lbl3" layoutX="170.0" layoutY="200.0" />
+        <Label fx:id="lbl4" layoutX="170.0" layoutY="280.0" />
+        <Label fx:id="lbl5" layoutX="5.0" layoutY="40.0" />
+        <Label fx:id="lbl6" layoutX="5.0" layoutY="120.0" />
+        <Label fx:id="lbl7" layoutX="5.0" layoutY="200.0" />
+        <Label fx:id="lbl8" layoutX="5.0" layoutY="280.0" />
+        
+        
+        <Label fx:id="lblSold" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="94.0" prefHeight="82.0" prefWidth="119.0" textAlignment="CENTER"  />
+      </children>
+    </Pane>
+      
+      
+    <Button fx:id="btn1" layoutX="435.0" layoutY="60.0" mnemonicParsing="false" onAction="#act1" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn2" layoutX="435.0" layoutY="140.0" mnemonicParsing="false" onAction="#act2" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn3" layoutX="435.0" layoutY="220.0" mnemonicParsing="false" onAction="#act3" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn4" layoutX="435.0" layoutY="300.0" mnemonicParsing="false" onAction="#act4" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn5" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#act5" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn6" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#act6" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn7" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#act7" prefHeight="43.0" prefWidth="69.0" />
+    <Button fx:id="btn8" layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onAction="#act8" prefHeight="43.0" prefWidth="69.0" />
+    
+    
+  </children>
 </AnchorPane>

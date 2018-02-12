@@ -1,28 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atm2;
 
+import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
-/**
- *
- * @author stefa
- */
 public class Baza extends Application {
 
+  // Definim variabile esențiale pentru aplicație
   Stage fereastra;
   static String pin;
   static String limba;
   static int suma;
   static Boolean chitanta;
+  static String tema;
+
+  // Definim controlerele paginilor
   UnuController ctrUnu;
   DoiController ctrDoi;
   TreiController ctrTrei;
@@ -37,12 +37,28 @@ public class Baza extends Application {
 
   @Override
   public void start(Stage primaryStage) {
+    // Încărcare accesibilitate
+    Settings setting;
+    try {
+      File file = new File("src/atm2/files/settings.xml");
+      JAXBContext jaxbContext = JAXBContext.newInstance(Settings.class);
+      Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+      setting = (Settings) jaxbUnmarshaller.unmarshal(file);
+      Baza.tema = setting.getTheme();
+    } catch (JAXBException e) {
+      e.printStackTrace();
+      Baza.tema = "original";
+    }
+
+    // Instanțiem valori inițiale
     Baza.limba = "ro";
-    Baza.pin = "2121";
+    Baza.pin = "1554";
     Baza.suma = 0;
     Baza.chitanta = false;
     fereastra = primaryStage;
+
     try {
+      fereastra.getIcons().add(new Image(Baza.class.getResourceAsStream("img/atm.png")));
       fereastra.setTitle("ATM");
       incarcUnu();
       fereastra.show();
@@ -51,12 +67,19 @@ public class Baza extends Application {
     }
   }
 
+  // afișează ecranul de intrare
   public void incarcUnu() {
+    // Resetăm aspectul al cel original
+    SettingsControl settings = new SettingsControl();
+    settings.save("theme", "original");
+    Baza.tema = "original";
+    
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("unu.fxml"));
     AnchorPane container;
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -66,12 +89,19 @@ public class Baza extends Application {
     ctrUnu.baza = this;
   }
 
+  // afișează pagina de selectare a limbii
   public void incarcDoi() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("doi.fxml"));
     AnchorPane container;
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -81,12 +111,19 @@ public class Baza extends Application {
     ctrDoi.baza = this;
   }
 
+  // afișează pagina de introducere a codului pin
   public void incarcTrei() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("trei.fxml"));
     AnchorPane container;
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -102,6 +139,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -117,6 +160,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -132,6 +181,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -147,6 +202,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -162,6 +223,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -177,6 +244,12 @@ public class Baza extends Application {
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -186,13 +259,18 @@ public class Baza extends Application {
     ctrSapte.baza = this;
   }
 
-  
   public void incarcOpt() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("opt.fxml"));
     AnchorPane container;
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {
@@ -202,13 +280,18 @@ public class Baza extends Application {
     ctrOpt.baza = this;
   }
 
-  
   public void incarcNoua() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("noua.fxml"));
     AnchorPane container;
     try {
       container = (AnchorPane) loader.load();
       Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
       fereastra.setScene(scene);
       fereastra.sizeToScene();
     } catch (IOException ex) {

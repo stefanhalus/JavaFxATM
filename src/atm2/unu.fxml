@@ -5,46 +5,48 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm2.UnuController">
-   <children>
-      <Rectangle fx:id="welcome" arcHeight="5.0" arcWidth="5.0" fill="#fff966" height="360.0" layoutX="90.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" width="335.0" />
-      <Label layoutX="105.0" layoutY="24.0" text="Bine ați venit!" textFill="#300101">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Label>
-      <Label layoutX="142.0" layoutY="94.0" text="click pe imaginea din centru pentru a porni" textFill="#930000" />
-      <Label layoutX="105.0" layoutY="280.0" text="Carduri acceptate: " />
-      <Label layoutX="105.0" layoutY="74.0" text="Introducți cardul cu bnda magnetică în jos" />
-      <ImageView fx:id="im1" fitHeight="140.0" fitWidth="208.0" layoutX="154.0" layoutY="133.0" onMouseClicked="#intra" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagini/icard.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="105.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagini/visa.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="225.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagini/maestro.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="345.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagini/mastercard.jpg" />
-         </image>
-      </ImageView>
-      <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="10.0" layoutY="300.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="10.0" layoutY="140.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="10.0" layoutY="220.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="435.0" layoutY="60.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="435.0" layoutY="140.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="435.0" layoutY="220.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-      <Button layoutX="435.0" layoutY="300.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm2.UnuController">
+  <children>
+     
+    <Pane fx:id="ecran" layoutX="82.0" layoutY="15.0" prefHeight="355.0" prefWidth="350.0">
+      <children>
+        <Label fx:id="lblTitlu" layoutX="8.0" layoutY="2.0" text="Bine ați venit!" />
+        <Label fx:id="wideMsg1" layoutX="20.0" layoutY="55.0" text="Introducți cardul cu bnda magnetică în jos" />
+        <Label fx:id="wideMsg2" layoutX="20.0" layoutY="105.0" text="click pe imaginea din centru pentru a porni" />
+        <Label fx:id="wideMsg3" layoutX="20.0" layoutY="270.0" text="Carduri acceptate: " />
+        <ImageView fx:id="im1" fitHeight="120.0" fitWidth="220.0" layoutX="80.0" layoutY="155.0" onMouseClicked="#intra" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@img/card.gif" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="15.0" layoutY="300.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@img/visa.jpg" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="140.0" layoutY="300.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@img/maestro.jpg" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="40.0" fitWidth="80.0" layoutX="255.0" layoutY="300.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@img/mastercard.jpg" />
+          </image>
+        </ImageView>
+      </children>
+    </Pane>
+      
+    <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="10.0" layoutY="300.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="10.0" layoutY="140.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="10.0" layoutY="220.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="435.0" layoutY="60.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="435.0" layoutY="140.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="435.0" layoutY="220.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+    <Button layoutX="435.0" layoutY="300.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="69.0" />
+     
+  </children>
 </AnchorPane>

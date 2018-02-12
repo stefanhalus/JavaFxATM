@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07.02.2018, 01:00:51
+    Author     : stefa
+*/
+.root{
+  -fx-font-size: 14pt;
+  -fx-font-family: "Courier New";
+  -fx-font-color: rgb(254, 254, 254);
+  -fx-base: rgb(35, 35, 35);
+  -fx-background: rgb(45, 45, 45);
+}
+
+#ecran {
+  -fx-background-color: rgb(40, 40, 40);
+  -fx-text-fill: white;
+  -fx-border-color: gray ;
+  -fx-border-insets: 0;
+  -fx-border-width: 2;
+  -fx-border-radius: 5;
+}
+#lblTitlu {
+  -fx-alignment: center;
+  -fx-text-fill: yellow;
+  -fx-font-size: 18pt;
+  -fx-font-weight: 800;
+  -fx-pref-width: 335px;
+  -fx-text-alignment: center;
+  -fx-effect: dropshadow( one-pass-box, gray, 8, 0.3, -1, 1 );
+}
+
+Label { 
+  -fx-font-size: 14pt;
+  -fx-font-weight: 700;
+} 
+
+#lbl1, #lbl2, #lbl3,  #lbl4, #lbl5, #lbl6, #lbl7, #lbl8 {
+  -fx-line-spacing: 0;
+  -fx-max-height:75;
+  -fx-max-width:165;
+  -fx-min-height:65;
+  -fx-min-width:175;
+  -fx-pref-rows: 2;
+  -fx-pref-width: 145;
+  -fx-wrap-text: true;
+}
+
+#lbl1, #lbl2, #lbl3,  #lbl4 {
+  -fx-alignment: CENTER_RIGHT;
+  -fx-text-alignment: right;
+}
+
+#lbl5, #lbl6, #lbl7, #lbl8 {
+  -fx-alignment: CENTER_LEFT;
+  -fx-text-alignment: left;
+}
+
+/*
+Ecrnul Unu*/
+#wideMsg1, #wideMsg2 {
+  -fx-alignment: CENTER;
+  -fx-text-alignment: center;
+  -fx-max-width:300;
+  -fx-wrap-text: true;
+}
+#wideMsg2 {
+  -fx-font-weight: 900;
+  -fx-font-style: oblique;  
+  -fx-text-fill: yellow;
+}
+
+/*
+Ecran Cinci Sold*/
+#lblSold {
+  -fx-text-alignment: center;
+  -fx-font-weight: 900;
+  -fx-wrap-text: true;
+  -fx-min-width:100;
+  -fx-max-width:100;
+}

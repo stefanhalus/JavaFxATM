@@ -10,6 +10,7 @@ import javafx.scene.shape.Rectangle;
 public class UnuController {
 
   Baza baza;
+
   @FXML
   private ResourceBundle resources;
 
@@ -27,4 +28,8 @@ public class UnuController {
     baza.incarcDoi();
   }
 
+  @FXML
+  void initialize() {
+
+  }
 }

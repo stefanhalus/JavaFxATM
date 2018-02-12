@@ -84,11 +84,14 @@ public class DoiController {
 
   @FXML
   void act8(ActionEvent event) {
-
+    SettingsControl settings = new SettingsControl();
+    settings.save("theme", "dark");
+    Baza.tema = "dark";
+    baza.incarcDoi();
   }
 
   @FXML
   void initialize() {
-    
+
   }
 }

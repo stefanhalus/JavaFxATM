@@ -131,12 +131,12 @@ public class OptController {
     bani.play();
 
     if (Baza.chitanta == true) {
-      PauseTransition chitanta = new PauseTransition(Duration.seconds(2));
+      PauseTransition chitanta = new PauseTransition(Duration.seconds(10));
       chitanta.setOnFinished(event -> ridicatiChitanta());
       chitanta.play();
     }
 
-    PauseTransition multumim = new PauseTransition(Duration.seconds(5));
+    PauseTransition multumim = new PauseTransition(Duration.seconds(15));
     multumim.setOnFinished(event -> baza.incarcNoua());
     multumim.play();
   }

@@ -12,20 +12,20 @@ Application implements a new and fany timer
 ```Java
 PauseTransition chitanta = new PauseTransition(Duration.seconds(2));
       chitanta.setOnFinished(event -> ridicatiChitanta());
-      chitanta.play();
+      chitanta.play();```
 ```
 
-##Version 3.0 released
-###New features
+## Version 3.0 released
+### New features
 * Database driven accounts and journals, with 3 tables:
 ** cards
 ** operations journal
 ** pin validation journal
 * New screen with last 10 operations made on the atm
 
-###Updates and fixes
+### Updates and fixes
 * Collor forced to green on the last three screens for dark theme were unreadable. Now they support the selected theme
 * Fixed the TextFields background, also for the new implemente dTableView already implemented in transactions journal
 
-$$$Known bugs
+### Known bugs
 * Some translations are not well documented. Some messages are incomplete, wrong or missing. 

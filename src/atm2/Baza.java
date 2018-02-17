@@ -2,7 +2,6 @@ package atm2;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import javafx.application.Application;
@@ -67,7 +66,7 @@ public class Baza extends Application {
     try {
       fereastra.getIcons().add(new Image(Baza.class.getResourceAsStream("img/atm.png")));
       fereastra.setTitle("ATM");
-      incarcCinciJurnalRetrageri();
+      incarcUnu();
       fereastra.show();
     } catch (Exception ex) {
       ex.printStackTrace();
@@ -140,6 +139,7 @@ public class Baza extends Application {
     ctrTrei.baza = this;
   }
 
+  // afișează pagina de alegere a operațiunii dorite
   public void incarcPatru() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("patru.fxml"));
     AnchorPane container;
@@ -161,6 +161,7 @@ public class Baza extends Application {
     ctrPatru.baza = this;
   }
 
+  // afișează pagina de verificare a soldului rămas
   public void incarcCinciSold() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("cinciSold.fxml"));
     AnchorPane container;
@@ -182,6 +183,7 @@ public class Baza extends Application {
     ctrCinciSold.baza = this;
   }
 
+  // afișează pagina de jurnal retrageri (ultimele 10 intrări)
   public void incarcCinciJurnalRetrageri() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("cinciJurnal.fxml"));
     AnchorPane container;
@@ -203,6 +205,7 @@ public class Baza extends Application {
     ctrCinciJurnal.baza = this;
   }
 
+  // afișează ecrandul cu opțiunile de alegere a sumelor retrase
   public void incarcCinciRetrag() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("cinciRetrag.fxml"));
     AnchorPane container;
@@ -224,6 +227,7 @@ public class Baza extends Application {
     ctrCinciRetrag.baza = this;
   }
 
+  // ecran de introducere a unei nume nemenționate în ecranul anterior
   public void incarcCinciAlta() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("cinciAlta.fxml"));
     AnchorPane container;
@@ -245,6 +249,7 @@ public class Baza extends Application {
     ctrCinciAlta.baza = this;
   }
 
+  // ecran de de solicitare a tipăririi chitanței
   public void incarcSase() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("sase.fxml"));
     AnchorPane container;
@@ -266,6 +271,7 @@ public class Baza extends Application {
     ctrSase.baza = this;
   }
 
+  // ecran de procesare a tranzacțiilor
   public void incarcSapte() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("sapte.fxml"));
     AnchorPane container;
@@ -287,6 +293,7 @@ public class Baza extends Application {
     ctrSapte.baza = this;
   }
 
+  // ecran de eliberare etapizată a resurselor
   public void incarcOpt() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("opt.fxml"));
     AnchorPane container;
@@ -308,6 +315,7 @@ public class Baza extends Application {
     ctrOpt.baza = this;
   }
 
+  // ecran de final, mulțumiri
   public void incarcNoua() {
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("noua.fxml"));
     AnchorPane container;

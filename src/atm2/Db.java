@@ -51,6 +51,9 @@ public class Db {
     }
   }
 
+  /*
+  Metodă care permite identificarea unui client pe baza unui cod pin validat
+  */
   public Client getClientByPin(String pin) {
     ResultSet rs;
     try {
@@ -61,10 +64,6 @@ public class Db {
       pSqlAdd.setInt(1, Integer.parseInt(pin));
       rs = pSqlAdd.executeQuery();
 
-      /// identificăm nr de înregistrări returnate
-//      rs.last();
-//      int size = rs.getRow();
-//      rs.beforeFirst();
       while (rs.next()) {
         client.setId(rs.getInt("id"));
         client.setNume(rs.getString("nume"));
@@ -86,6 +85,10 @@ public class Db {
     return client;
   }
 
+  /*
+  Metodă de blocare a cardului la erori excesive
+  NOTĂ! Nu funcționează în mod logic momentan deoarece nu se identifică cardurile pe un cod unic de identificare momentan
+  */
   public void clientiBlochezCard(int id) {
     try {
 //      cnx.setAutoCommit(false);
@@ -105,6 +108,9 @@ public class Db {
     }
   }
 
+  /*
+  Funcție de actualizare a soldului rămas după o operacțiune efectuată
+  */
   public void clientiSoldRamas(int pin, Double sold) {
     try {
       String sqlAdd = "UPDATE `carduri` SET `sold` = ? WHERE pin = ? ;";
@@ -123,6 +129,9 @@ public class Db {
     }
   }
 
+  /*
+  Metodă care aduce un arrayList cu jurnalul retragerilor
+  */
   public ArrayList<JurnalRetrageri> getJurnalRetrageri(String pin) {
     ArrayList<JurnalRetrageri> listaRetrageri = new ArrayList<>();
     ResultSet rs;
@@ -176,6 +185,9 @@ public class Db {
     }
   }
 
+  /*
+  Metodă de jurnalizare a codurilor pin introduse
+  */
   public void jurnalValidarePinIns(String pin, int status) {
     try {
 //      cnx.setAutoCommit(false);
@@ -196,56 +208,4 @@ public class Db {
     }
   }
 
-//
-//  public void jurnalIns() {
-//    String nume = denumire.getText();
-//    int gram = Integer.parseInt(gramaj.getText());
-//    double pretul = Double.parseDouble(pret.getText());
-//    String desc = descriere.getText();
-//    String sqlAdd = "INSERT INTO `preparate` (`id`, `categorie`, `nume`, `gramaj`, `pret`, `descriere`) VALUES (NULL, ?, ?, ?, ?, ?);";
-//    try {
-//      cnx.setAutoCommit(false);
-//      PreparedStatement pSqlAdd = cnx.prepareStatement(sqlAdd);
-//      pSqlAdd.setInt(1, categ);
-//      pSqlAdd.setString(2, nume);
-//      pSqlAdd.setInt(3, gram);
-//      pSqlAdd.setDouble(4, pretul);
-//      pSqlAdd.setString(5, desc);
-//      pSqlAdd.executeUpdate();
-//      cnx.commit();
-//    } catch (SQLException e) {
-//      Alert query = new Alert(Alert.AlertType.ERROR);
-//      query.setTitle("Înregistrare preparate...");
-//      query.setHeaderText("Status înregistrare: SQL");
-//      query.setContentText(e.toString());
-//      query.showAndWait().ifPresent(rs -> {
-//      });
-//    }
-//  }
-//
-//  private void incarc(int categ) {
-//    tabel.getItems().clear();
-//    String cda = "select * from preparate where categorie = order by nume";
-//// System.out.println("cda: " + cda);
-//    ResultSet rs;
-//    try {
-//      Statement stm;
-//      stm = cnx.createStatement();
-//      rs = stm.executeQuery(cda);
-//      while (rs.next()) {
-//        int id = rs.getInt("ID");
-//        String nume = rs.getString("NUME");
-//        int gramajul = rs.getInt("GRAMAJ");
-//        double pretul = rs.getDouble("PRET");
-//        String descrierea = rs.getString("DESCRIERE");
-//// Creez un obiect din clasa Preparat
-//        Preparat p;
-//        p = new Preparat(id, nume, gramajul, pretul, descrierea);
-//        tabel.getItems().add(p);
-//      }
-//      stm.close();
-//    } catch (SQLException ex) {
-//      Logger.getLogger(RestaurantController.class.getName()).log(Level.SEVERE, null, ex);
-//    }
-//  }
 }

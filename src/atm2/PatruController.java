@@ -98,7 +98,7 @@ public class PatruController {
 
   @FXML
   void act5(ActionEvent event) {
-
+    baza.incarcCinciJurnalRetrageri();
   }
 
   @FXML
@@ -122,21 +122,25 @@ public class PatruController {
     msg.set(lang, "lbl1", "Retragere numerar");
     msg.set(lang, "lbl2", "Verificare sold");
     msg.set(lang, "lbl3", "");
+    msg.set(lang, "lbl5", "Jurnal retrageri");
     msg.set(lang, "lblTitlu", "Alegeți tranzacția dorită");
     lang = "en";
     msg.set(lang, "lbl1", "Cash withdrawal");
     msg.set(lang, "lbl2", "Check your hip");
     msg.set(lang, "lbl3", "");
+    msg.set(lang, "lbl5", "");
     msg.set(lang, "lblTitlu", "Choose the desired transaction");
     lang = "fr";
     msg.set(lang, "lbl1", "Retrait en espèces");
     msg.set(lang, "lbl2", "Vérifiez votre hanche");
     msg.set(lang, "lbl3", "");
+    msg.set(lang, "lbl5", "");
     msg.set(lang, "lblTitlu", "Choisissez la transaction souhaitée");
     lang = "hu";
     msg.set(lang, "lbl1", "Készpénzfelvétel");
     msg.set(lang, "lbl2", "Ellenőrizze csípőjét");
     msg.set(lang, "lbl3", "");
+    msg.set(lang, "lbl5", "");
     msg.set(lang, "lblTitlu", "Válassza ki a kívánt tranzakciót");
   }
 
@@ -148,6 +152,7 @@ public class PatruController {
     lbl1.setText(msg.get("lbl1"));
     lbl2.setText(msg.get("lbl2"));
     lbl3.setText(msg.get("lbl3"));
+    lbl5.setText(msg.get("lbl5"));
     lblTitlu.setText(msg.get("lblTitlu"));
   }
 }

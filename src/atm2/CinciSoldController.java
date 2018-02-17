@@ -21,6 +21,7 @@ import javafx.scene.shape.Rectangle;
 public class CinciSoldController {
 
   Baza baza;
+  Db db = new Db();
   Messages msg;
 
   @FXML
@@ -132,38 +133,39 @@ public class CinciSoldController {
     msg.set(lang, "lbl1", "Altă tranzacție");
     msg.set(lang, "lbl4", "Scoatere card");
     msg.set(lang, "lblTitlu", "Verificare sold");
-    msg.set(lang, "lblSold", "Sold disponibil: \n");
+    msg.set(lang, "lblSold", "Sold disponibil: \n%s lei");
     lang = "en";
     msg.set(lang, "lbl1", "Another transaction");
     msg.set(lang, "lbl4", "Card withdrawal");
     msg.set(lang, "lblTitlu", "Check your hip");
-    msg.set(lang, "lblSold", "Balance available: \n");
+    msg.set(lang, "lblSold", "Balance available: \n%s lei");
     lang = "fr";
     msg.set(lang, "lbl1", "Une autre transaction");
     msg.set(lang, "lbl4", "Retrait de la carte");
     msg.set(lang, "lblTitlu", "Vérifiez votre hanche");
-    msg.set(lang, "lblSold", "Solde disponible: \n");
+    msg.set(lang, "lblSold", "Solde disponible: \n%s lei");
     lang = "hu";
     msg.set(lang, "lbl1", "Egy másik tranzakció");
     msg.set(lang, "lbl4", "Kártya visszavonása");
     msg.set(lang, "lblTitlu", "Ellenőrizze csípőjét");
-    msg.set(lang, "lblSold", "Rendelkezésre álló egyenleg");
+    msg.set(lang, "lblSold", "Rendelkezésre álló egyenleg \n%s lei");
   }
 
   @FXML
   void initialize() {
+    Client client = db.getClientByPin(Baza.pin);
     msg = new Messages("sold", Baza.limba);
     mesaje();
 // Încărcăm etichetele în funcție de limbă
     lbl1.setText(msg.get("lbl1"));
     lbl4.setText(msg.get("lbl4"));
     lblTitlu.setText(msg.get("lblTitlu"));
-    String soldCurent = "";
-    try {
-      soldCurent = msg.readFile();
-    } catch (Exception ex) {
-    }
-    lblSold.setText(msg.get("lblSold") + soldCurent);
+    Double soldCurent = client.getSold();
+//    try {
+//      soldCurent = msg.readFile();
+//    } catch (Exception ex) {
+//    }
+    lblSold.setText(String.format(msg.get("lblSold"), soldCurent) );
   }
 
 }

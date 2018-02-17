@@ -5,6 +5,8 @@
  */
 package atm2;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -110,12 +112,29 @@ public class SapteController {
     msg.set(lang, "lblMessage", "A tranzakció folyamatban van");
   }
 
+  /*
+  Metodă de inversare a separatorului decimal și grăpării (virgulă cu punct)
+   */
+  public String getGermanCurrencyFormat(double value) {
+    // Setăm locale la US sau UK/GERMAN pentru inversarea propriu-zisă
+    NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+    nf.setGroupingUsed(true);
+    return nf.format(value);
+  }
+
+  /*
+  Metoda Processing face actualizarea soldului disponibil în baza de date
+   */
   @FXML
   void processing() {
-    Integer sold = Integer.parseInt(msg.readFile());
-    Integer extracted = Baza.suma;
-    String remaining = Integer.toString(sold - extracted);
-    msg.saveFile(remaining, false);
+    Locale.setDefault(new Locale("ro", "RO"));
+    Db db = new Db();
+    Client client = db.getClientByPin(Baza.pin);
+    Double sold = client.getSold();
+    Double extracted = (double) Baza.suma;
+    Double remaining = sold - extracted;
+    db.clientiSoldRamas(Integer.parseInt(Baza.pin), remaining);
+    db.jurnalRetrageri(Integer.parseInt(Baza.pin), extracted);
   }
 
   @FXML

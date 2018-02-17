@@ -2,6 +2,9 @@ package atm2;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,6 +33,7 @@ public class Baza extends Application {
   CinciAltaController ctrCinciAlta;
   CinciRetragController ctrCinciRetrag;
   CinciSoldController ctrCinciSold;
+  CinciJurnalController ctrCinciJurnal;
   SaseController ctrSase;
   SapteController ctrSapte;
   OptController ctrOpt;
@@ -37,6 +41,9 @@ public class Baza extends Application {
 
   @Override
   public void start(Stage primaryStage) {
+    Locale.setDefault(new Locale("ro", "RO"));
+    DecimalFormatSymbols unusualSymbols = new DecimalFormatSymbols();
+    unusualSymbols.setDecimalSeparator(',');
     // Încărcare accesibilitate
     Settings setting;
     try {
@@ -60,7 +67,7 @@ public class Baza extends Application {
     try {
       fereastra.getIcons().add(new Image(Baza.class.getResourceAsStream("img/atm.png")));
       fereastra.setTitle("ATM");
-      incarcUnu();
+      incarcCinciJurnalRetrageri();
       fereastra.show();
     } catch (Exception ex) {
       ex.printStackTrace();
@@ -73,7 +80,7 @@ public class Baza extends Application {
     SettingsControl settings = new SettingsControl();
     settings.save("theme", "original");
     Baza.tema = "original";
-    
+
     FXMLLoader loader = new FXMLLoader(this.getClass().getResource("unu.fxml"));
     AnchorPane container;
     try {
@@ -173,6 +180,27 @@ public class Baza extends Application {
     }
     ctrCinciSold = loader.getController();
     ctrCinciSold.baza = this;
+  }
+
+  public void incarcCinciJurnalRetrageri() {
+    FXMLLoader loader = new FXMLLoader(this.getClass().getResource("cinciJurnal.fxml"));
+    AnchorPane container;
+    try {
+      container = (AnchorPane) loader.load();
+      Scene scene = new Scene(container);
+      // încarcă fișier de stil
+      if (tema.equals("dark")) {
+        scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+      } else {
+        scene.getStylesheets().add(getClass().getResource("css/original.css").toExternalForm());
+      }
+      fereastra.setScene(scene);
+      fereastra.sizeToScene();
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+    ctrCinciJurnal = loader.getController();
+    ctrCinciJurnal.baza = this;
   }
 
   public void incarcCinciRetrag() {

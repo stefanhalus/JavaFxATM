@@ -21,7 +21,7 @@
         <Label fx:id="lbl7" layoutX="99.0" layoutY="232.0" />
         <Label fx:id="lbl8" layoutX="99.0" layoutY="302.0" />
         
-        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="80.0" prefHeight="150.0" prefWidth="280.0" textAlignment="CENTER" textFill="#093703" wrapText="true" />
+        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="80.0" prefHeight="150.0" prefWidth="280.0" textAlignment="CENTER" wrapText="true" />
       </children>
     </Pane>
       

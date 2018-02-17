@@ -22,17 +22,17 @@
         <Label fx:id="lbl7" layoutX="5.0" layoutY="200.0" />
         <Label fx:id="lbl8" layoutX="5.0" layoutY="280.0" />
         
-        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="40.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" textFill="#093703" wrapText="true">
+        <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="40.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" wrapText="true">
           <font>
             <Font name="System Bold" size="18.0" />
           </font>
         </Label>
-        <Label fx:id="lblMessage1" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="100.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" textFill="#093703" wrapText="true">
+        <Label fx:id="lblMessage1" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="100.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" wrapText="true">
           <font>
             <Font name="System Bold" size="18.0" />
           </font>
         </Label>
-        <Label fx:id="lblMessage2" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="150.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" textFill="#093703" wrapText="true">
+        <Label fx:id="lblMessage2" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="150.0" prefHeight="50.0" prefWidth="280.0" textAlignment="CENTER" wrapText="true">
           <font>
             <Font name="System Bold" size="18.0" />
           </font>

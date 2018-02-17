@@ -23,7 +23,7 @@
         <Label fx:id="lbl7" layoutX="5.0" layoutY="200.0" />
         <Label fx:id="lbl8" layoutX="5.0" layoutY="280.0" />
         
-        <TextField fx:id="lblSold" layoutX="80.0" layoutY="80.0" prefHeight="25.0" prefWidth="94.0" promptText="123" />
+        <TextField fx:id="lblSold" layoutX="50.0" layoutY="80.0" prefHeight="25.0" maxWidth="70.0" promptText="123" />
       </children>
     </Pane>
     
